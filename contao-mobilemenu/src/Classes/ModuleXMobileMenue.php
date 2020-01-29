@@ -12,8 +12,7 @@ class ModuleXMobileMenue extends \Module {
     $GLOBALS['TL_JAVASCRIPT'][] = $assetsDir . '/js/nav_jquery.js|static';
     //$GLOBALS['TL_CSS'][] = $assetsDir . '/scss/nav_jquery.css|static';
 
-    $js_query = '<script src="system/modules/xmobilemenu/assets/nav_jquery.js"></script>
-        <script>
+    $js_query = '<script>
             (function ($) {
                 $(document).ready(function () {
                     new $.XMobileMenu($("#xmobilemenuebt_' . $this->id . '"), $("#xmobilemenue_maincontainer_' . $this->id . '"), true, ' . ($this->xmobilemenuemcompletesize == 1 ? 'true' : 'false') . ');
