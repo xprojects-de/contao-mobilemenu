@@ -1,3 +1,18 @@
 <div class="<?php echo $this->class; ?> block"<?php echo $this->cssID; ?><?php if ($this->style): ?> style="<?php echo $this->style; ?>"<?php endif; ?>>
-  <?php echo($this->xausgabe); ?>
+  <div class="xmobilemenue" id="xmobilemenue_<?= $this->id ?>">
+    <div class="xmobilemenue_btcontainer" id="xmobilemenue_btcontainer_<?= $this->id ?>">
+      <span id="xmobilemenuebt_<?= $this->id ?>"><?= $this->icon ?></span>
+    </div>
+    <div class="xmobilemenue_maincontainer" id="xmobilemenue_maincontainer_<?= $this->id ?>">
+      <div class="xmobilemenue_maincontainer_inside">
+        <?php if ($this->closearea == true): ?>
+          <div class="xmobilemenue_maincontainer_inside_close">
+            <a href="#" onclick="return false;"><?= $this->iconClose ?></a>
+          </div>
+          <div style="clear:both;"></div>
+        <?php endif; ?>
+        <?= $this->modulePlaceholder ?>
+      </div>
+    </div>    
+  </div>
 </div>
