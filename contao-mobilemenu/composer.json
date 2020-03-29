@@ -3,7 +3,7 @@
   "description": "Mobilemenu for Contao",
   "keywords": ["contao", "mobilemenu"],
   "type": "contao-bundle",
-  "version": "0.3",
+  "version": "0.4",
   "license": "LGPL-3.0-or-later",
   "require": {
     "php": ">=5.6",

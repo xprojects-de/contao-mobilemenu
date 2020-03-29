@@ -22,7 +22,7 @@
           self.containerelement.fadeIn();
           self.containerelement.width($(window).width() + "px");
         } else {
-          self.containerelement.hide();
+          self.containerelement.fadeOut(750);
         }
       });
       if (this.overlayMode === true) {
@@ -51,7 +51,7 @@
       var self = this;
       $(this.containerelement).find('a').each(function () {
         $(this).click(function () {
-          self.containerelement.hide();
+          self.containerelement.fadeOut(750);
         });
       });
     }
