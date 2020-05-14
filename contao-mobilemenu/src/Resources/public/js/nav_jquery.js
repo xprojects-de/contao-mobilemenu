@@ -1,9 +1,8 @@
 (function ($) {
 
-  $.XMobileMenu = function (buttonelement, containerelement, overlayMode, completeSize) {
+  $.XMobileMenu = function (buttonelement, containerelement, completeSize) {
     this.buttonelement = buttonelement;
     this.containerelement = containerelement;
-    this.overlayMode = overlayMode;
     this.completeSize = completeSize;
     if (this.buttonelement.length && this.containerelement.length) {
       this.init();
@@ -25,26 +24,18 @@
           self.containerelement.fadeOut(750);
         }
       });
-      if (this.overlayMode === true) {
-        $(window).on('resize', function () {
-          self.setPosition();
-        });
-      }
+      $(window).on('resize', function () {
+        self.setPosition();
+      });
     },
     setModeSettings: function () {
-      if (this.overlayMode === true) {
-        this.containerelement.css({width: '100%', 'z-index': 5000, margin: 0, left: 0, top: 0, position: 'absolute'});
-      } else {
-        this.containerelement.css({width: '100%', 'z-index': 5000});
-      }
+      this.containerelement.css({width: '100%', 'z-index': 50000, margin: 0, left: 0, top: 0, position: 'absolute'});
     },
     setPosition: function () {
-      if (this.overlayMode === true) {
-        if (this.completeSize === true) {
-          this.containerelement.css({height: $(window).height(), top: 0, left: 0, position: 'absolute'});
-        } else {
-          this.containerelement.css({top: (this.buttonelement.position().top + this.buttonelement.height()), left: 0, position: 'absolute'});
-        }
+      if (this.completeSize === true) {
+        this.containerelement.css({height: $(window).height()});
+      } else {
+        this.containerelement.css({top: (this.buttonelement.offset().top + this.buttonelement.height())});
       }
     },
     setLinksActivation: function () {

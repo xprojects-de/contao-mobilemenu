@@ -10,12 +10,11 @@ class ModuleXMobileMenue extends \Module {
 
     $assetsDir = 'bundles/mobilemenu';
     $GLOBALS['TL_JAVASCRIPT'][] = $assetsDir . '/js/nav_jquery.js|static';
-    //$GLOBALS['TL_CSS'][] = $assetsDir . '/scss/nav_jquery.css|static';
 
     $js_query = '<script>
             (function ($) {
                 $(document).ready(function () {
-                    new $.XMobileMenu($("#xmobilemenuebt_' . $this->id . '"), $("#xmobilemenue_maincontainer_' . $this->id . '"), true, ' . ($this->xmobilemenuemcompletesize == 1 ? 'true' : 'false') . ');
+                    new $.XMobileMenu($("#xmobilemenue_btcontainer_' . $this->id . '"), $("#xmobilemenue_maincontainer_' . $this->id . '"), ' . ($this->xmobilemenuemcompletesize == 1 ? 'true' : 'false') . ');
                 });
             })(jQuery);
         </script>';
@@ -23,7 +22,7 @@ class ModuleXMobileMenue extends \Module {
     $css = '<style type="text/css" media="all">
         /* <![CDATA[ */   
         .xmobilemenue {display:none;}           
-        #xmobilemenue_maincontainer_' . $this->id . ' {display:none;width:100%;z-index:5000;left:0;top:0;position: absolute;margin:0;}        
+        #xmobilemenue_maincontainer_' . $this->id . ' {display:none;}        
         #xmobilemenuebt_' . $this->id . ' {cursor:pointer;}
         /* ]]> */
         </style>            
