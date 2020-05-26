@@ -1,9 +1,11 @@
 (function ($) {
 
-  $.XMobileMenu = function (buttonelement, containerelement, completeSize) {
+  $.XMobileMenu = function (buttonelement, containerelement, completeSize, icon, iconclose) {
     this.buttonelement = buttonelement;
     this.containerelement = containerelement;
     this.completeSize = completeSize;
+    this.icon = icon;
+    this.iconclose = iconclose;
     if (this.buttonelement.length && this.containerelement.length) {
       this.init();
     }
@@ -20,8 +22,20 @@
         if (self.containerelement.css("display") === 'none') {
           self.containerelement.fadeIn();
           self.containerelement.width($(window).width() + "px");
+          self.buttonelement.addClass('xmobilemenuactive');
+          if (self.iconclose !== '' && self.completeSize === false) {
+            self.buttonelement.find('img').each(function () {
+              $(this).attr('src', self.iconclose);
+            });
+          }
         } else {
           self.containerelement.fadeOut(750);
+          self.buttonelement.removeClass('xmobilemenuactive');
+          if (self.icon !== '' && self.completeSize === false) {
+            self.buttonelement.find('img').each(function () {
+              $(this).attr('src', self.icon);
+            });
+          }
         }
       });
       $(window).on('resize', function () {
@@ -35,7 +49,7 @@
       if (this.completeSize === true) {
         this.containerelement.css({height: $(window).height()});
       } else {
-        this.containerelement.css({top: (this.buttonelement.offset().top + this.buttonelement.height())});
+        this.containerelement.css({top: (this.buttonelement.position().top + this.buttonelement.height())});
       }
     },
     setLinksActivation: function () {
@@ -43,12 +57,14 @@
       $(this.containerelement).find('a').each(function () {
         $(this).click(function () {
           self.containerelement.fadeOut(750);
+          if (self.icon !== '' && self.completeSize === false) {
+            self.buttonelement.find('img').each(function () {
+              $(this).attr('src', self.icon);
+            });
+          }
         });
       });
     }
   };
 
 }(jQuery, document, window));
-
-
-

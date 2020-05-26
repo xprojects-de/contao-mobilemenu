@@ -11,10 +11,22 @@ class ModuleXMobileMenue extends \Module {
     $assetsDir = 'bundles/mobilemenu';
     $GLOBALS['TL_JAVASCRIPT'][] = $assetsDir . '/js/nav_jquery.js|static';
 
+    $imageNormal = $this->xgetImage($this->xmobilemenuemicon);
+    $icon = "";
+    if ($imageNormal != "") {
+      $icon = '<img src="' . $imageNormal . '" />';
+    }
+
+    $imageClose = $this->xgetImage($this->xmobilemenuemcloseicon);
+    $iconClose = "";
+    if ($imageClose != "") {
+      $iconClose = '<img src="' . $imageClose . '" />';
+    }
+
     $js_query = '<script>
             (function ($) {
                 $(document).ready(function () {
-                    new $.XMobileMenu($("#xmobilemenue_btcontainer_' . $this->id . '"), $("#xmobilemenue_maincontainer_' . $this->id . '"), ' . ($this->xmobilemenuemcompletesize == 1 ? 'true' : 'false') . ');
+                    new $.XMobileMenu($("#xmobilemenue_btcontainer_' . $this->id . '"), $("#xmobilemenue_maincontainer_' . $this->id . '"), ' . ($this->xmobilemenuemcompletesize == 1 ? 'true' : 'false') . ',\'' . \Environment::get('base') . $imageNormal . '\',\'' . \Environment::get('base') . $imageClose . '\');
                 });
             })(jQuery);
         </script>';
@@ -30,18 +42,6 @@ class ModuleXMobileMenue extends \Module {
 
     $GLOBALS['TL_HEAD'][] = $css;
     $GLOBALS['TL_JQUERY'][] = $js_query;
-
-    $imageNormal = $this->xgetImage($this->xmobilemenuemicon);
-    $icon = "";
-    if ($imageNormal != "") {
-      $icon = '<img src="' . $imageNormal . '" />';
-    }
-
-    $imageClose = $this->xgetImage($this->xmobilemenuemcloseicon);
-    $iconClose = "";
-    if ($imageClose != "") {
-      $iconClose = '<img src="' . $imageClose . '" />';
-    }
 
     $this->Template->id = $this->id;
     $this->Template->closearea = ($this->xmobilemenuemcompletesize == 1);
