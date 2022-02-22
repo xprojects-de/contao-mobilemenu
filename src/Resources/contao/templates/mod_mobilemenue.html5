@@ -1,0 +1,22 @@
+<div class="<?= $this->class ?> block"<?= $this->cssID ?><?php if ($this->style): ?> style="<?= $this->style ?>"<?php endif; ?>>
+    <div class="xmobilemenue" id="xmobilemenue_<?= $this->id ?>">
+        <div class="xmobilemenue_btcontainer" id="xmobilemenue_btcontainer_<?= $this->id ?>">
+            <span id="xmobilemenuebt_<?= $this->id ?>">
+                <img src="<?= $this->iconImage ?>" alt="<?= $this->moduleAlt ?>">
+            </span>
+        </div>
+        <div class="xmobilemenue_maincontainer" id="xmobilemenue_maincontainer_<?= $this->id ?>">
+            <div class="xmobilemenue_maincontainer_inside">
+                <?php if ($this->closearea === true): ?>
+                    <div class="xmobilemenue_maincontainer_inside_close">
+                        <a href="#" onclick="return false;">
+                            <img src="<?= $this->iconCloseImage ?>" alt="<?= $this->moduleAlt ?>">
+                        </a>
+                    </div>
+                    <div style="clear:both;"></div>
+                <?php endif; ?>
+                {{insert_module::<?= $this->modulePlaceholder ?>}}
+            </div>
+        </div>
+    </div>
+</div>
