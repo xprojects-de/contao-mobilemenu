@@ -1,0 +1,44 @@
+{
+  "name": "xprojects/contao-mobilemenu",
+  "description": "Mobilemenu for Contao",
+  "keywords": [
+    "contao",
+    "mobilemenu"
+  ],
+  "type": "contao-bundle",
+  "version": "1.0.0",
+  "license": "LGPL-3.0-or-later",
+  "require": {
+    "php": ">=7.4",
+    "contao/core-bundle": "^4.9"
+  },
+  "authors": [
+    {
+      "name": "XProjects",
+      "homepage": "https://x-projects.de",
+      "email": "infos@x-projects.de",
+      "role": "Developer"
+    }
+  ],
+  "autoload": {
+    "psr-4": {
+      "XProjects\\Mobilemenu\\": "src/"
+    }
+  },
+  "extra": {
+    "contao-manager-plugin": "XProjects\\Mobilemenu\\ContaoManager\\Plugin",
+    "contao-component-dir": "public"
+  },
+  "config": {
+    "contao-component-dir": "public"
+  },
+  "require-dev": {
+    "roave/security-advisories": "dev-latest",
+    "phpstan/phpstan": "^0.12.81",
+    "contao/manager-bundle": "^4.9",
+    "contao/manager-plugin": "^2.0",
+    "vimeo/psalm": "^4.6",
+    "phpunit/phpunit": "^9.5",
+    "symfony/phpunit-bridge": "^5.2"
+  }
+}

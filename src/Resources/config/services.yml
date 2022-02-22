@@ -1,0 +1,15 @@
+services:
+
+  _defaults:
+    autoconfigure: true
+    autowire: true
+
+  XProjects\Mobilemenu\Controller\MobileMenuController:
+    arguments:
+      - '@contao.framework'
+      - '%kernel.project_dir%'
+      - '@contao.image.image_factory'
+    tags:
+      - name: contao.frontend_module
+        category: miscellaneous
+        template: mod_mobilemenue
