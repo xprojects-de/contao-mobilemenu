@@ -4,7 +4,6 @@ declare(strict_types=1);
 
 namespace XProjects\Mobilemenu\Controller;
 
-use Contao\Controller;
 use Contao\CoreBundle\Controller\FrontendModule\AbstractFrontendModuleController;
 use Contao\CoreBundle\Framework\ContaoFramework;
 use Contao\CoreBundle\Image\ImageFactoryInterface;

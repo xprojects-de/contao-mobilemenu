@@ -30,14 +30,16 @@
     "contao-component-dir": "public"
   },
   "config": {
-    "contao-component-dir": "public"
+    "allow-plugins": true
   },
   "require-dev": {
     "roave/security-advisories": "dev-latest",
-    "phpstan/phpstan": "^0.12.81",
-    "contao/manager-bundle": "^4.9",
+    "contao/manager-bundle": "^4.13",
     "contao/manager-plugin": "^2.0",
-    "vimeo/psalm": "^4.6",
+    "phpstan/phpstan": "^1.0",
+    "phpstan/phpstan-phpunit": "^1.0",
+    "phpstan/phpstan-symfony": "^1.0",
+    "slam/phpstan-extensions": "^6.0",
     "phpunit/phpunit": "^9.5",
     "symfony/phpunit-bridge": "^5.2"
   }
