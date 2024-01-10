@@ -2,8 +2,8 @@
 <project version="4">
   <component name="WebServers">
     <option name="servers">
-      <webServer id="fe4f0205-92ff-45db-bb49-cf55efffaeee" name="Mobilemenu" url="https://contao.local:8890">
-        <fileTransfer mountedRoot="$PROJECT_DIR$/../../MAMPP/contao.local/vendor/xprojects" accessType="MOUNT" port="0" />
+      <webServer id="fe4f0205-92ff-45db-bb49-cf55efffaeee" name="Mobilemenu" url="https://contao.local5.latest:8890">
+        <fileTransfer mountedRoot="$PROJECT_DIR$/../../MAMPP/contao.local5-latest/vendor/xprojects" accessType="MOUNT" port="0" />
       </webServer>
     </option>
   </component>

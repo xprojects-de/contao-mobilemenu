@@ -35,9 +35,9 @@ class MobileMenuController extends AbstractFrontendModuleController
      * @param Template $template
      * @param ModuleModel $model
      * @param Request $request
-     * @return Response|null
+     * @return Response
      */
-    public function getResponse(Template $template, ModuleModel $model, Request $request): ?Response
+    public function getResponse(Template $template, ModuleModel $model, Request $request): Response
     {
         $GLOBALS['TL_JAVASCRIPT'][] = 'bundles/mobilemenu/js/nav_jquery.js|static';
 
@@ -99,7 +99,7 @@ class MobileMenuController extends AbstractFrontendModuleController
             $imageObject = new File($objFileModel->path);
             if ($imageObject->exists()) {
 
-                $defaultConfig = [$imageObject->width, $imageObject->height, ResizeConfiguration::MODE_PROPORTIONAL];
+                $defaultConfig = [$imageObject->width, $imageObject->height, ResizeConfiguration::MODE_CROP];
                 if ($size !== null && $size !== '') {
 
                     $sizeConfig = StringUtil::deserialize($size);
@@ -113,7 +113,7 @@ class MobileMenuController extends AbstractFrontendModuleController
 
             }
 
-        } catch (\Exception $ex) {
+        } catch (\Exception) {
 
         }
 
