@@ -8,7 +8,7 @@ services:
     arguments:
       - '@contao.framework'
       - '%kernel.project_dir%'
-      - '@contao.image.image_factory'
+      - '@contao.image.factory'
     tags:
       - name: contao.frontend_module
         category: miscellaneous

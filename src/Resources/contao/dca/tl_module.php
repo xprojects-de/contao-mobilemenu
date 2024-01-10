@@ -1,7 +1,6 @@
 <?php
 
 use Contao\System;
-use Contao\BackendUser;
 
 $GLOBALS['TL_DCA']['tl_module']['palettes']['mobile_menu'] = '{title_legend},name,type;{template_legend},xmobilemenuemid,xmobilemenuemicon,xmobilemenuemicon_size,xmobilemenuemcloseicon,xmobilemenuemcloseicon_size,xmobilemenuemcompletesize,xmobilemenuemalt,{expert_legend:hide},cssID';
 
@@ -37,7 +36,7 @@ $GLOBALS['TL_DCA']['tl_module']['fields']['xmobilemenuemicon_size'] = [
         'tl_class' => 'clr w50',
     ],
     'options_callback' => static function () {
-        return System::getContainer()->get('contao.image.image_sizes')->getOptionsForUser(BackendUser::getInstance());
+        return System::getContainer()->get('contao.image.sizes')?->getAllOptions();
     },
     'sql' => "varchar(64) NOT NULL default ''"
 ];
@@ -64,7 +63,7 @@ $GLOBALS['TL_DCA']['tl_module']['fields']['xmobilemenuemcloseicon_size'] = [
         'tl_class' => 'clr w50',
     ],
     'options_callback' => static function () {
-        return System::getContainer()->get('contao.image.image_sizes')->getOptionsForUser(BackendUser::getInstance());
+        return System::getContainer()->get('contao.image.sizes')?->getAllOptions();
     },
     'sql' => "varchar(64) NOT NULL default ''"
 ];
